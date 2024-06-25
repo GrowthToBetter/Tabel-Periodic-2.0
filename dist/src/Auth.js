@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-class Game {
+class Auth {
   constructor() {
     this.container = document.querySelector(".container");
   }
@@ -40,6 +40,6 @@ class Game {
 }
 
 window.addEventListener("load", () => {
-  const Games = new Game();
-  Games.init();
+  const authentication = new Auth();
+  authentication.init();
 });

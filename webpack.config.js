@@ -1,6 +1,6 @@
 let path = require('path')
 module.exports= {
-    entry: './dist/src/Game.js',
+    entry: './dist/src/Auth.js',
     mode:'development',
     output: {
     filename: 'main.js',

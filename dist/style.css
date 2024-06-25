@@ -1,6 +1,20 @@
-* {
-  padding: 0;
+:root {
+  --primary: #587689;
+  --bg:#7595a9;
+  --highlight: #E61010;
+}
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  
+}
+body{
+  font-family: 'Libre Baskerville', Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #010101;
 }
 
 .container h1 {
@@ -43,4 +57,55 @@
     background-color: rgb(59, 81, 169);
     box-shadow: 1rem 1.5rem rgba(0, 0, 0, 0.217) ;
     z-index: 2;
+}
+.container{
+  position: relative;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-nav a{
+  font-size: 1.5rem;
+  color: #ffff;
+  display: inline-block;
+  margin: 0.5rem;
+
+}
+.navbar .navbar-logo{
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffff;
+}
+.feather{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.navbar .navbar-nav a:hover{
+  color: var(--bg);
+  transition: 0.3s linear;
+}
+.navbar .navbar-nav a::after{
+  content: '';
+  display: block;
+  bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--bg);
+  transform: scaleX(0);
+}
+.navbar .navbar-nav a:hover::after{
+  transform: scaleX(1);
+}
+#hamburger-menu{
+  display: none;
 }
