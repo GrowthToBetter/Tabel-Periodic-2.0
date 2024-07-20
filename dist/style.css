@@ -1,18 +1,17 @@
 :root {
   --primary: #587689;
-  --bg:#7595a9;
-  --highlight: #E61010;
+  --bg: #7595a9;
+  --highlight: #e61010;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
   text-decoration: none;
-  
 }
-body{
-  font-family: 'Libre Baskerville', Arial, Helvetica, sans-serif;
+body {
+  font-family: "Libre Baskerville", Arial, Helvetica, sans-serif;
   color: white;
   background-color: #010101;
 }
@@ -40,29 +39,29 @@ body{
   }
 }
 .animated-container .animated-text {
-    text-align: center;
-    position: absolute;
-    font-size: 10rem;
-    top: 0;
-    left: 0;
-    color: aliceblue;
-    animation: move 4s alternate infinite;
-    opacity: 0.5;
+  text-align: center;
+  position: absolute;
+  font-size: 10rem;
+  top: 0;
+  left: 0;
+  color: aliceblue;
+  animation: move 4s alternate infinite;
+  opacity: 0.5;
 }
-.animated-container #Login{
-    width: 30rem;
-    height: 12rem;
-    border-radius: 2rem;
-    font-size: 7rem;
-    background-color: rgb(59, 81, 169);
-    box-shadow: 1rem 1.5rem rgba(0, 0, 0, 0.217) ;
-    z-index: 2;
+.animated-container #Login {
+  width: 30rem;
+  height: 12rem;
+  border-radius: 2rem;
+  font-size: 7rem;
+  background-color: rgb(59, 81, 169);
+  box-shadow: 1rem 1.5rem rgba(0, 0, 0, 0.217);
+  z-index: 2;
 }
-.container{
+.container {
   position: relative;
 }
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,36 +75,67 @@ body{
   z-index: 9999;
 }
 
-.navbar .navbar-nav a{
+.navbar .navbar-nav a {
   font-size: 1.5rem;
   color: #ffff;
   display: inline-block;
   margin: 0.5rem;
-
 }
-.navbar .navbar-logo{
+.navbar .navbar-logo {
   font-size: 2rem;
   font-weight: 900;
   color: #ffff;
 }
-.feather{
+.feather {
   width: 1.5rem;
   height: 1.5rem;
+  color: white;
 }
-.navbar .navbar-nav a:hover{
+.navbar .navbar-nav a:hover {
   color: var(--bg);
   transition: 0.3s linear;
 }
-.navbar .navbar-nav a::after{
-  content: '';
+.navbar .navbar-nav a::after {
+  content: "";
   display: block;
   bottom: 0.5rem;
   border-bottom: 0.1rem solid var(--bg);
   transform: scaleX(0);
 }
-.navbar .navbar-nav a:hover::after{
+.navbar .navbar-nav a:hover::after {
   transform: scaleX(1);
 }
-#hamburger-menu{
-  display: none;
+#hamburger-menu .feather{
+  width: 2rem;
+  height: 2rem;
+}
+.navbar-nav-menu {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  z-index: 100;
+  background-color: var(--bg);
+  width: 30rem;
+  height: 100vh;
+  transition: 0.3s;
+}
+.navbar-nav-menu.active{
+  left: 0;
+}
+.animated-container{
+  z-index: -9999;
+}
+
+.auth button{
+  background-image: url(./src/img/pp.jpg);
+  background-size: cover;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  cursor: pointer;
+}
+.auth{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 25rem;
 }

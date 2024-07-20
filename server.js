@@ -8,6 +8,9 @@ appExp.set('view engine', 'ejs');
 appExp.get('/',(req,res)=>{
     res.render('../dist/index')
 })
+appExp.get('/Auth',(req,res)=>{
+    res.render('../dist/Auth')
+})
 
 appExp.listen(port,()=>{
     console.log(`running on port ${port}`)

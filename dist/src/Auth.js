@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC9NBGgCQNTcCeagvCoO1GS1QM2BE8KZ7k",
@@ -16,30 +21,43 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-class Auth {
+export class Auth {
   constructor() {
     this.container = document.querySelector(".container");
   }
   Login() {
-    signInWithPopup(auth, provider)
+    signInWithPopup(auth, provider).catch((error) => {
+      alert(error);
+    });
+  }
+  Logout() {
+    signOut(auth)
       .catch((error) => {
-        alert(error)
+        alert(error);
       });
   }
   init() {
     auth.onAuthStateChanged((user) => {
       if (user) {
       } else {
-        let confirms = confirm("Anda belum login, Login sekarang?");
-        if (confirms) {
-          this.Login();
-        }
+        this.Login();
       }
     });
   }
 }
 
+const authentication = new Auth();
+const Login= document.querySelector('.Login')
+const Logout= document.querySelector('.Logout')
 window.addEventListener("load", () => {
-  const authentication = new Auth();
   authentication.init();
 });
+
+Login.addEventListener('click',()=>{
+  authentication.Login();
+  open("/","_self")
+})
+Logout.addEventListener('click',()=>{
+  authentication.Logout();
+  open("/","_self");
+})
