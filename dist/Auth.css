@@ -1,24 +1,65 @@
-.container{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.popup{
-    position: relative;
-    width: 40rem;
-    height: 90vh;
-    border: 1px solid black;
+.popup {
+  position: relative;
+  width: 40rem;
+  height: 90vh;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(src/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+}
+h1{
+  font-weight: 200;
+  margin:2rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+.headermaster{
     display: flex;
     align-items: center;
-    justify-content: center;
+    position: fixed;
+    top: 0;
     flex-direction: column;
 }
-button{
-    position: relative;
-    width: 18rem;
-    height: 8rem;
-    margin: 2rem;
+h3{
+    margin: 0;
+    padding: 0;
+}
+h3 a{
+    text-decoration:none;
+    color: rgb(223, 64, 15);
+}
+.header{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 2px double black;
+}
+
+
+button {
+  position: relative;
+  border-radius: 2rem;
+  border-color: #dcfeff;
+  box-shadow: 1rem 1rem rgba(0, 0, 0, 0.103) ;
+  width: 18rem;
+  height: 8rem;
+  margin: 2rem;
+  background-image: linear-gradient(rgb(152, 244, 239), #dcfeff);
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  font-style: italic;
 }

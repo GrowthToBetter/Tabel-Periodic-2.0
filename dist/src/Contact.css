@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(248, 191, 175, 0.858), rgb(216, 153, 135));
+}
+.container .WrapElemen {
+  background-color: white;
+  height: 80vh;
+  box-shadow: 10rem;
+  width: 30rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0.5rem 0.5rem 2rem rgb(0, 0, 0, 0.7);
+}
+.WrapElemen .content-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.WrapElemen .content-1 .photo {
+  width: 10rem;
+  height: 10rem;
+  background-image: url(./img/profil.jpg);
+  background-position: 2rem;
+  background-size: cover;
+  border-radius: 100%;
+}
+.WrapElemen .content-1 p {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.WrapElemen .content-1 h1 {
+  font-size: 1rem;
+}
+.WrapElemen .content-1 span i {
+  font-size: inherit;
+}
+.content-1 h3 span {
+  color: red;
+  font-size: 1rem;
+}
+.content-1 h3 {
+  letter-spacing: 0.2rem;
+  opacity: 0.75;
+}
+.container .WrapElemen .content {
+  margin-bottom: 2rem;
+  width: 100%;
+  border-radius: 1rem;
+  border-top: 0.5rem solid rgba(230, 77, 11, 0.728);
+  border-bottom: 0.5rem solid rgba(230, 77, 11, 0.728);
+}
+.feather {
+  width: 1rem;
+  height: 1rem;
+}
+.container .WrapElemen ul li a {
+  display: inline-block;
+  text-decoration: none;
+}
+.container .WrapElemen ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  margin: 2rem;
+}
+#Instagram {
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.2rem 0.5rem black;
+  background-color: black;
+}
+#Instagram a {
+  color: white;
+  margin-right: 0.5rem;
+}
+#Instagram .feather {
+  border-radius: 0.2rem;
+  color: white;
+  background: linear-gradient(
+    rgba(236, 80, 236, 0.952),
+    rgba(252, 38, 34, 0.642),
+    rgba(241, 129, 25, 0.811),
+    rgb(231, 196, 69)
+  );
+}
+#Github {
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.2rem 0.5rem black;
+  background: linear-gradient(rgba(0, 0, 0, 0.854), rgba(49, 44, 60, 0.811));
+  color: white;
+}
+#Github a {
+  color: white;
+}
+#Facebook {
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.2rem 0.5rem black;
+  background: linear-gradient(rgb(2, 100, 247), rgb(5, 102, 238));
+  color: white;
+}
+#Facebook a {
+  color: white;
+}
+#LinkInd {
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.2rem 0.5rem black;
+  background: linear-gradient(rgb(2, 100, 247), rgb(9, 108, 246));
+  color: white;
+}
+#LinkInd a {
+  color: white;
+  margin-right: 0.2rem;
+  letter-spacing: 0.1rem;
+}
+#TikTok {
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.2rem 0.5rem black;
+  background-color: black;
+}
+#TikTok a {
+  color: white;
+  margin-right: 0.5rem;
+}
+#TikTok i {
+  background: linear-gradient(rgba(255, 0, 0, 0.596), rgba(0, 225, 255, 0.582));
+  border-radius: 2rem;
+  color: white;
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+}
