@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./dist/src/conf.js":
+/***/ "./dist/src/Auth.js":
 /*!**************************!*\
-  !*** ./dist/src/conf.js ***!
+  !*** ./dist/src/Auth.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n\r\n\r\n\r\nconst firebaseConfig = {\r\n  apiKey: \"AIzaSyC9NBGgCQNTcCeagvCoO1GS1QM2BE8KZ7k\",\r\n  authDomain: \"tabel-periodic.firebaseapp.com\",\r\n  databaseURL:\r\n    \"https://tabel-periodic-default-rtdb.asia-southeast1.firebasedatabase.app\",\r\n  projectId: \"tabel-periodic\",\r\n  storageBucket: \"tabel-periodic.appspot.com\",\r\n  messagingSenderId: \"391430727013\",\r\n  appId: \"1:391430727013:web:552d5788757f7222fe6d8c\",\r\n};\r\n\r\nconst app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);\r\nconst auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.getAuth)(app);\r\nconst provider = new firebase_auth__WEBPACK_IMPORTED_MODULE_1__.GoogleAuthProvider();\r\n\r\nclass Auth {\r\n  constructor() {\r\n    this.container = document.querySelector(\".container\");\r\n  }\r\n  Login() {\r\n    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signInWithPopup)(auth, provider).catch((error) => {\r\n      alert(error);\r\n    }).then(()=>{\r\n      open(\"/\", \"_self\");\r\n    });\r\n  }\r\n  Logout() {\r\n    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(auth).catch((error) => {\r\n      alert(error);\r\n    }).then(()=>{\r\n      open(\"/\", \"_self\");\r\n    });\r\n  }\r\n}\r\nconst authentication = new Auth();\r\n\r\nconst signup = document.querySelector(\".Login\");\r\nconst exit = document.querySelector(\".Logout\");\r\nsignup.addEventListener(\"click\", () => {\r\n  authentication.Login();\r\n});\r\nexit.addEventListener(\"click\", () => {\r\n  authentication.Logout();\r\n});\r\n\n\n//# sourceURL=webpack://tabel-periodic-v2.0.1/./dist/src/conf.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n\r\n\r\n\r\nconst firebaseConfig = {\r\n  apiKey: \"AIzaSyC9NBGgCQNTcCeagvCoO1GS1QM2BE8KZ7k\",\r\n  authDomain: \"tabel-periodic.firebaseapp.com\",\r\n  databaseURL:\r\n    \"https://tabel-periodic-default-rtdb.asia-southeast1.firebasedatabase.app\",\r\n  projectId: \"tabel-periodic\",\r\n  storageBucket: \"tabel-periodic.appspot.com\",\r\n  messagingSenderId: \"391430727013\",\r\n  appId: \"1:391430727013:web:552d5788757f7222fe6d8c\",\r\n};\r\n\r\nconst app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);\r\nconst auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.getAuth)(app);\r\nconst provider = new firebase_auth__WEBPACK_IMPORTED_MODULE_1__.GoogleAuthProvider();\r\n\r\nclass Auth {\r\n  constructor() {\r\n    this.container = document.querySelector(\".container\");\r\n  }\r\n  Login() {\r\n    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signInWithPopup)(auth, provider).catch((error) => {\r\n      alert(error);\r\n    });\r\n  }\r\n  Logout() {\r\n    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(auth)\r\n      .catch((error) => {\r\n        alert(error);\r\n      });\r\n  }\r\n  init() {\r\n    auth.onAuthStateChanged((user) => {\r\n      if (user) {\r\n      } else {\r\n        let conf=confirm('you dont even login yet, please Login Right now!')\r\n        if(conf){\r\n          open('/Auth', '_self')\r\n        }\r\n      }\r\n    });\r\n  }\r\n}\r\n\r\nconst authentication = new Auth();\r\n\r\nwindow.addEventListener(\"load\", () => {\r\n  authentication.init();\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://tabel-periodic-v2.0.1/./dist/src/Auth.js?");
 
 /***/ }),
 
@@ -202,7 +202,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./dist/src/conf.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./dist/src/Auth.js");
 /******/ 	
 /******/ })()
 ;

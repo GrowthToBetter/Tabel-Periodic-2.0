@@ -28,31 +28,25 @@ class Auth {
   Login() {
     signInWithPopup(auth, provider).catch((error) => {
       alert(error);
+    }).then(()=>{
+      open("/", "_self");
     });
   }
   Logout() {
-    signOut(auth)
-      .catch((error) => {
-        alert(error);
-      });
-  }
-  init() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-      } else {
-        let conf=confirm('you dont even login yet, please Login Right now!')
-        if(conf){
-          open('/Auth', '_self')
-        }
-      }
+    signOut(auth).catch((error) => {
+      alert(error);
+    }).then(()=>{
+      open("/", "_self");
     });
   }
 }
-
 const authentication = new Auth();
 
-window.addEventListener("load", () => {
-  authentication.init();
+const signup = document.querySelector(".Login");
+const exit = document.querySelector(".Logout");
+signup.addEventListener("click", () => {
+  authentication.Login();
 });
-
-
+exit.addEventListener("click", () => {
+  authentication.Logout();
+});
